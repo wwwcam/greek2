@@ -30,7 +30,7 @@ GREEK_WORDS = {
     "άνθρωπος": ['안트로포스', '사람']
 }
 # 폰트 설정
-korean_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/malgun.ttf"
+korean_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSansCJKkr-Regular.ttf"
 greek_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSans-Regular.ttf"
 default_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSansCJKkr-Regular.ttf"
 
