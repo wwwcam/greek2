@@ -3,8 +3,8 @@ import StudyGreekAlphabet
 import StudyGreekDanajang
 
 PAGES = {
-    "그리스어 알파벳 학습": StudyGreekAlphabet,
-    "그리스어 단어 학습": StudyGreekDanajang
+    "헬라어어 알파벳 학습": StudyGreekAlphabet,
+    "헬라어어 단어 학습": StudyGreekDanajang
 }
 
 def run():

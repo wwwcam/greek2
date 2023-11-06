@@ -103,7 +103,7 @@ def determine_font(character):
         # 한글 범위
         return korean_font
     elif '\u0370' <= character <= '\u03FF':
-        # 그리스어 범위
+        # 헬라어어 범위
         return greek_font
     else:
         # 기타 폰트 (예: 영어나 숫자 등)
@@ -162,7 +162,7 @@ def generate_word_table_image():
 
 
 def render_quiz():
-    st.header("그리스어 단어 퀴즈")
+    st.header("헬라어어 단어 퀴즈")
     img = generate_word_table_image()
     if img and isinstance(img, Image.Image):
         st.image(img, width=1000)
@@ -180,7 +180,7 @@ def render_quiz():
         if 'alphabet' not in st.session_state or st.session_state.alphabet not in remaining_words:
             st.session_state.alphabet, st.session_state.pronunciation = random.choice(list(remaining_words.items()))
 
-        st.header(f"다음 그리스 알파벳의 발음은 무엇인가요?")
+        st.header(f"다음 헬라어 알파벳의 발음은 무엇인가요?")
         st.markdown(f"<h1 style='font-size: 80px;'>{st.session_state.alphabet}</h1>", unsafe_allow_html=True)
 
         random.seed(st.session_state.alphabet)
@@ -210,6 +210,6 @@ def render_quiz():
         
     
 def run():
-    st.markdown("<h1 style='text-align: center; color: white;'>그리스어 단어 학습</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>헬라어어 단어 학습</h1>", unsafe_allow_html=True)
     initialize_app_state()
     render_quiz()

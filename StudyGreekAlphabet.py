@@ -7,10 +7,6 @@ import requests
 
 #streamlit run SangHoon_StudyGreek.py --server.enableCORS false
 
-
-
-
-
 def play_sound(is_correct):
     if is_correct:
         audio_path = 'https://raw.githubusercontent.com/wwwcam/greek2/main/jung.mp3'
@@ -85,7 +81,7 @@ def generate_alphabet_table_image():
 
 
 def render_quiz():
-    st.header("그리스 알파벳 퀴즈")
+    st.header("헬라어 알파벳 퀴즈")
     img = generate_alphabet_table_image()
     if img and isinstance(img, Image.Image):
         st.image(img, width=800)
@@ -103,7 +99,7 @@ def render_quiz():
         if 'alphabet' not in st.session_state or st.session_state.alphabet not in remaining_alphabets:
             st.session_state.alphabet, st.session_state.pronunciation = random.choice(list(remaining_alphabets.items()))
 
-        st.header(f"다음 그리스 알파벳의 발음은 무엇인가요?")
+        st.header(f"다음 헬라어 알파벳의 발음은 무엇인가요?")
         st.markdown(f"<h1 style='font-size: 80px;'>{st.session_state.alphabet}</h1>", unsafe_allow_html=True)
 
         random.seed(st.session_state.alphabet)
@@ -188,6 +184,6 @@ def run():
         "ω":['오메가', '오'],
     }
 
-    st.markdown("<h1 style='text-align: center; color: white;'>그리스 알파벳 학습</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>헬라어 알파벳 학습</h1>", unsafe_allow_html=True)
     initialize_app_state()
     render_quiz()
