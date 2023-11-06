@@ -37,9 +37,9 @@ def load_font_from_github(username, repository, font_filename, font_size=20):
     return font
 
 # 사용자 ID와 레포지토리 이름을 기반으로 폰트 로드
-korean_font = load_font_from_github("wwwcam", "greek", "malgun.ttf")
-greek_font = load_font_from_github("wwwcam", "greek", "NotoSans-Regular.ttf")
-default_font = load_font_from_github("wwwcam", "greek", "NotoSansCJKkr-Regular.ttf")
+korean_font = load_font_from_github("wwwcam", "greek2", "malgun.ttf")
+greek_font = load_font_from_github("wwwcam", "greek2", "NotoSans-Regular.ttf")
+default_font = load_font_from_github("wwwcam", "greek2", "NotoSansCJKkr-Regular.ttf")
 
 
 
