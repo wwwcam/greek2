@@ -40,9 +40,6 @@ default_font = ImageFont.truetype(fetch_font(default_font_path), 20)
 
 
 
-
-
-
 def play_sound(is_correct):
     if is_correct:
         audio_path = 'https://raw.githubusercontent.com/wwwcam/greek/main/jung.mp3'
