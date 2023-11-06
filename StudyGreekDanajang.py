@@ -30,20 +30,16 @@ GREEK_WORDS = {
     "άνθρωπος": ['안트로포스', '사람']
 }
 # 폰트 설정
-                    
-korean_font_path = "https://raw.githubusercontent.com/wwwcam/greek2/main/malgun.ttf"
-greek_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSans-Regular.ttf"
-default_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSansCJKkr-Regular.ttf"
+def load_font_from_github(username, repository, font_filename, font_size=20):
+    url = f"https://raw.githubusercontent.com/{username}/{repository}/main/{font_filename}"
+    response = requests.get(url)
+    font = ImageFont.truetype(BytesIO(response.content), font_size)
+    return font
 
-
-def load_font_from_url(font_url, size=20):
-    response = requests.get(font_url)
-    font_bytes = BytesIO(response.content)
-    return ImageFont.truetype(font_bytes, size)
-
-korean_font = load_font_from_url(korean_font_path)
-greek_font = load_font_from_url(greek_font_path)
-default_font = load_font_from_url(greek_font_path)
+# 사용자 ID와 레포지토리 이름을 기반으로 폰트 로드
+korean_font = load_font_from_github("wwwcam", "greek", "malgun.ttf")
+greek_font = load_font_from_github("wwwcam", "greek", "NotoSans-Regular.ttf")
+default_font = load_font_from_github("wwwcam", "greek", "NotoSansCJKkr-Regular.ttf")
 
 
 
