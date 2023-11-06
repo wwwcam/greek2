@@ -55,9 +55,9 @@ default_font = ImageFont.truetype(fetch_font(default_font_path), 20)
 
 def play_sound(is_correct):
     if is_correct:
-        audio_path = 'https://raw.githubusercontent.com/wwwcam/greek/main/jung.mp3'
+        audio_path = 'https://raw.githubusercontent.com/wwwcam/greek2/main/jung.mp3'
     else:
-        audio_path = 'https://raw.githubusercontent.com/wwwcam/greek/main/oh.mp3'
+        audio_path = 'https://raw.githubusercontent.com/wwwcam/greek2/main/oh.mp3'
     
     audio_script = f"""
     <audio controls autoplay>
