@@ -140,7 +140,7 @@ def generate_word_table_image():
 
     # 각 행에서 가장 긴 단어를 기준으로 셀의 가로 길이를 결정
     max_text_widths = [get_max_text_width(list(remaining_words.values())[i:i+columns]) for i in range(0, len(remaining_words), columns)]
-    max_cell_width = max(max_text_widths) + 10  # 20은 여유 공간
+    max_cell_width = max(max_text_widths) + 5  # 20은 여유 공간
 
     table_width = max_cell_width * columns
     cell_height = 100  # 셀의 세로 길이는 고정값 사용
