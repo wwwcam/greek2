@@ -128,10 +128,16 @@ def get_max_text_width(words):
     return max([get_text_width(word) for word in words])
 
 def generate_word_table_image():
-    columns = 5
+    columns = 4
     remaining_words = {key: value for key, value in GREEK_WORDS.items() if key not in st.session_state.correct_answers}
     rows = len(remaining_words) // columns + (1 if len(remaining_words) % columns else 0)
     
+    if not remaining_words:  # 추가된 부분
+        img = Image.new('RGB', (500, 100), color='white')  # 500과 100은 예제로 사용된 값입니다.
+        d = ImageDraw.Draw(img)
+        draw_centered_text(d, "모든 문제를 완료하셨습니다. 수고하셨습니다.", (250, 50))  # 250과 50은 예제로 사용된 값입니다.
+        return img
+
     # 각 행에서 가장 긴 단어를 기준으로 셀의 가로 길이를 결정
     max_text_widths = [get_max_text_width(list(remaining_words.values())[i:i+columns]) for i in range(0, len(remaining_words), columns)]
     max_cell_width = max(max_text_widths) + 20  # 20은 여유 공간
