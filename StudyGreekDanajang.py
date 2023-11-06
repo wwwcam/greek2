@@ -30,13 +30,20 @@ GREEK_WORDS = {
     "άνθρωπος": ['안트로포스', '사람']
 }
 # 폰트 설정
-korean_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSansCJKkr-Regular.ttf"
+                    
+korean_font_path = "https://raw.githubusercontent.com/wwwcam/greek2/main/malgun.ttf"
 greek_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSans-Regular.ttf"
 default_font_path = "https://raw.githubusercontent.com/wwwcam/greek/main/NotoSansCJKkr-Regular.ttf"
 
-korean_font = ImageFont.truetype(fetch_font(korean_font_path), 20)
-greek_font = ImageFont.truetype(fetch_font(greek_font_path), 20)
-default_font = ImageFont.truetype(fetch_font(default_font_path), 20)
+
+def load_font_from_url(font_url, size=20):
+    response = requests.get(font_url)
+    font_bytes = BytesIO(response.content)
+    return ImageFont.truetype(font_bytes, size)
+
+korean_font = load_font_from_url(korean_font_path)
+greek_font = load_font_from_url(greek_font_path)
+default_font = load_font_from_url(greek_font_path)
 
 
 
